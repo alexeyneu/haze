@@ -40,7 +40,7 @@ type train struct {
 }
 
 type CashOn struct{
-	cash string `json:"cash,omitempty"`
+	Cash string `json:"cash,omitempty"`
 }
 
 func main() {
@@ -73,9 +73,9 @@ func postHandler(c *fiber.Ctx) error {
 	}
 	
 	if(reflect.ValueOf(x.BigtimeTransfer).IsZero()) {
-		h := on_green.Made(x.CashOnAddress.Address)
+		gds := on_green.Made(x.CashOnAddress.Address)
 		var si CashOn
-		si.cash = h
+		si.Cash = gds
 		f,_ := json.Marshal(si)
 		return c.SendString(string(f))
 	}
