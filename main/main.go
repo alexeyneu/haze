@@ -62,7 +62,7 @@ func postHandler(c *fiber.Ctx) error {
         if(reflect.ValueOf(x.CashOnAddress).IsZero()) {
 		var ferro train
 		ferro.From = x.BigtimeTransfer.From
-		ferro.SignatureID = fast[ferro.From]
+		ferro.SignatureID = fast[x.BigtimeTransfer.From]
 		ferro.To = x.BigtimeTransfer.To
 		ferro.TokenAddress = "TR7NHqjeKQxGTCi8Q8ZY4PL8OtSzgjLj6T"
 		ferro.FeeLimit = x.BigtimeTransfer.FeeLimit
